@@ -1,0 +1,30 @@
+{
+  "name": "waterline-sample",
+  "version": "0.0.1",
+  "description": "a sample of waterline",
+  "main": "bin/www",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stiekel/waterline-sample.git"
+  },
+  "keywords": [
+    "waterline",
+    "express",
+    "node"
+  ],
+  "author": "histkc@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stiekel/waterline-sample/issues"
+  },
+  "homepage": "https://github.com/stiekel/waterline-sample#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "sails-mongo": "^0.11.4",
+    "waterline": "^0.10.26"
+  }
+}

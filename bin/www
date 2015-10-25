@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+var app = require('../app');
+var config = require('../config/config');
+var waterline = require('../config/waterline');
+
+waterline.orm.initialize(waterline.config, function(err, models){
+  if(err) {
+    console.log('waterline initialize failed, err:', err);
+    return;
+  }
+  console.log('waterline initialize success.');
+  
+  app.set('models', models.collections);
+
+  app.listen(config.port, function(){
+    console.log('Express listening on port:', config.port);
+  });
+});
