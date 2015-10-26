@@ -15,10 +15,10 @@ module.exports = {
     });
   },
   list: function(req, res, next){
-    var pagestart = parseInt(req.query.pagestart, 1) ? parseInt(req.query.pagestart, 1) : 1;
-    var pagesize = parseInt(req.query.pagesize, 1) ? parseInt(req.query.pagesize, 1) : 1;
-    req.models.post.find().exec(function(err, docs){
+    var page = parseInt(req.query.page, 1) ? parseInt(req.query.page, 1) : 1;
+    var limit = parseInt(req.query.limit, 1) ? parseInt(req.query.limit, 1) : 1;
+    req.models.post.find().paginate({page: page, limit: limit}).exec(function(err, docs){
       res.json(docs);
     });
-  },
+  }
 };
