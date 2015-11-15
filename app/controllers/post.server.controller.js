@@ -15,8 +15,8 @@ module.exports = {
     });
   },
   list: function(req, res, next){
-    var page = parseInt(req.query.page, 1) ? parseInt(req.query.page, 1) : 1;
-    var limit = parseInt(req.query.limit, 1) ? parseInt(req.query.limit, 1) : 1;
+    var page = parseInt(req.query.page, 10) ? parseInt(req.query.page, 10) : 1;
+    var limit = parseInt(req.query.limit, 10) ? parseInt(req.query.limit, 10) : 1;
     req.models.post.find().paginate({page: page, limit: limit}).exec(function(err, docs){
       res.json(docs);
     });
